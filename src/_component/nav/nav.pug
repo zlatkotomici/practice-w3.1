@@ -1,5 +1,48 @@
+-
+    var sideNavigationList = {
+        'Home': {
+            title: 'Learn HTML, CSS and JavaScript',
+            linkList: [
+                {label: 'Learn html', link: '/html'},
+                {label: 'Learn css', link: '/css'},
+                {label: 'Learn javascript', link: '/javascript'},
+            ]
+        },
+        'HTML': {
+            title: 'HTML tutorial',
+            linkList: [
+                {label: 'HTML Elements', link: '/html/elements'},
+                {label: 'HTML Attributes', link: '/html/attributes'},
+                {label: 'HTML Headings', link: '/html/headings'},
+            ]
+        },
+        'CSS': {
+            title: 'CSS tutorial',
+            linkList: [
+                {label: 'CSS Colors', link: '/css/colors'},
+                {label: 'CSS Backgrounds', link: '/css/backgrounds'},
+                {label: 'CSS Borders', link: '/css/borders'},
+            ]
+        },
+        'JavaScript': {
+            title: 'JavaScript tutorial',
+            linkList: [
+                {label: 'JavaScript Variables', link: '/javascript/variables'},
+                {label: 'JavaScript Comments', link: '/javascript/comments'},
+                {label: 'JavaScript Operators', link: '/javascript/operators'},
+            ]
+        },
+    };
+
 nav
-    h3 HTML and CSS
-    a(href="/html") Learn html
-    a(href="/css") Learn css
-    a(href="/javascript") Learn javascript
+    
+    h3=sideNavigationList[landingPage].title
+    each navigation in sideNavigationList[landingPage].linkList
+        if navigation.link == activeLink
+            a.current(href=navigation.link)=navigation.label
+        else
+            a(href=navigation.link)=navigation.label
+
+    //- a(href="/html") Learn html
+    //- a(href="/css") Learn css
+    //- a(href="/javascript") Learn javascript
